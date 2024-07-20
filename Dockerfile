@@ -1,10 +1,15 @@
-# Use an official Java runtime as the base image
-FROM openjdk:11
+# stable official Java runtime base image
+FROM openjdk:17-jdk-alpine
 
-# Set the working directory inside the container
+# metadata
+LABEL maintainer="your-email@example.com"
+LABEL version="1.0"
+LABEL description="A simple Java application"
+
+# working directory
 WORKDIR /app
 
-# Copy the application JAR file into the container
+# Copy source code into the container
 COPY src/Main.java /app/Main.java
 
 # Compile the Java code
